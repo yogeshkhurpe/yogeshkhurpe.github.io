@@ -27,11 +27,25 @@
 		}
 
 		main {
-			margin: 20px;
+			margin: 20px auto;
+			max-width: 1100px;
 			padding: 20px;
 			background: white;
 			border-radius: 5px;
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Make long links wrap and keep list readable on small screens */
+		ol {
+			padding-left: 1.2rem;
+			white-space: normal;
+		}
+
+		ol a {
+			display: inline-block;
+			max-width: 100%;
+			word-break: break-word;
+			color: #0563bb;
 		}
 
 		h1 {

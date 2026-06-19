@@ -262,7 +262,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/file_00000000e270720986ca5532371181a5-1.png") top right no-repeat;
+  background-image: url("../img/file_00000000e270720986ca5532371181a5-1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -270,6 +272,21 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 992px) {
   #hero {
     padding-left: 160px;
+  }
+}
+
+/* On very large screens, fit image to width to avoid extra empty areas while keeping it centered vertically */
+@media (min-width: 1200px) {
+  #hero {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 992px) {
+  #hero {
+    background-position: top center;
+    background-size: cover;
   }
 }
 

@@ -56,6 +56,7 @@
                 <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
                 <!--<li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>-->
                 <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+                <li><a href="kids-game.html" class="nav-link"><i class="bx bx-mouse"></i> <span>Kids Game</span></a></li>
             </ul>
         </nav><!-- .nav-menu -->
 
@@ -408,6 +409,11 @@
             <div class="credits">
                 Designed by <a href="#">Yogesh Khurpe</a> | <a href="/preparation" target="_blank">Prepare yourself</a>
             </div>  
+            <div class="visit-counter" style="margin-top:10px;font-size:14px;color:#555">
+                <span id="staticCount" data-count="12345">Site visits: 12,345</span>
+                &nbsp;&middot;&nbsp;
+                <span id="localCount">Your visits: 0</span>
+            </div>
         </div>
     </footer><!-- End Footer -->
 
@@ -430,6 +436,27 @@
 
     <!-- Credly Badge Script -->
     <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+        <script>
+            (function(){
+                // Static placeholder: update data-count attribute in the DOM to change the displayed total
+                var staticEl = document.getElementById('staticCount');
+                var localEl = document.getElementById('localCount');
+                if(staticEl){
+                    var staticCount = parseInt(staticEl.getAttribute('data-count')||'0',10) || 0;
+                    staticEl.textContent = 'Site visits: ' + staticCount.toLocaleString();
+                }
+                try{
+                    var key = 'yogesh_site_local_visits_v1';
+                    var v = parseInt(localStorage.getItem(key) || '0',10) || 0;
+                    v = v + 1;
+                    localStorage.setItem(key, v);
+                    if(localEl) localEl.textContent = 'Your visits: ' + v.toLocaleString();
+                }catch(e){
+                    if(localEl) localEl.textContent = 'Your visits: N/A';
+                }
+            })();
+        </script>
 
 </body>
 
